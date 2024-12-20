@@ -1,0 +1,763 @@
+/* styles2.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: #ff6f61;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff3b2e;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Navigation Styles */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: #333333;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    padding: 5px 0;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #333333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-open .burger-menu span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.nav-open .burger-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-open .burger-menu span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.3s forwards;
+    }
+
+    .main-nav.nav-open ul {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 111, 97, 0.7),
+            rgba(255, 111, 97, 0.7)),
+        url('main_banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding-top: 80px;
+    /* Offset for fixed header */
+    transition: background-image 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 111, 97, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+}
+
+.hero-left,
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-left h1 {
+    font-family: 'Lora', serif;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-right h2 {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-left p,
+.hero-right p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: #f0f0f0;
+    line-height: 1.8;
+}
+
+.btn-group {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 35px;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn {
+    background: #ff6f61;
+    color: #ffffff;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: #ff3b2e;
+    transform: translateY(-5px);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.secondary-btn:hover {
+    background: #ffffff;
+    color: #ff6f61;
+    transform: translateY(-5px);
+}
+
+/* Listings Section Styles */
+.listings-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.vacancies-day,
+.vacancies-categories {
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vacancies-day:hover,
+.vacancies-categories:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vacancies-day h3,
+.vacancies-categories h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333333;
+    position: relative;
+}
+
+.vacancies-day h3::before,
+.vacancies-categories h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 4px;
+    background: #ff6f61;
+    border-radius: 2px;
+}
+
+.vacancies-list li,
+.categories-list li {
+    margin-bottom: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vacancies-list li:hover,
+.categories-list li:hover {
+    background: #ffebe9;
+    transform: translateY(-3px);
+}
+
+.vacancy-title,
+.categories-list a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.vacancy-info {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.categories-list a:hover {
+    color: #ff6f61;
+}
+
+.more-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #ff6f61;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.more-link:hover {
+    color: #ff3b2e;
+}
+
+/* Footer Styles */
+.footer {
+    background: #1a1a1a;
+    color: #bdc3c7;
+    font-size: 16px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 60px 0;
+}
+
+.footer-col {
+    flex: 1 1 300px;
+}
+
+.footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 20px;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 3px;
+    background: #ff6f61;
+    border-radius: 2px;
+}
+
+.footer-links .links-wrap {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-contacts address {
+    font-style: normal;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-contacts a {
+    color: #bdc3c7;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.footer-social .social-icons a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.newsletter-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 14px 25px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    transition: border 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form input:focus {
+    border-color: #ff6f61;
+}
+
+.newsletter-form button {
+    background: #ff6f61;
+    color: #ffffff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #ff3b2e;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    background: #141414;
+    padding: 30px 0;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #bdc3c7;
+    font-size: 16px;
+}
+
+.footer-bottom a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ff3b2e;
+}
+
+.developed a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.developed a:hover {
+    color: #ff3b2e;
+    text-decoration: underline;
+}
+
+/* Toggle Button Styles */
+.theme-toggle-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #ff6f61;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+    background: #ff3b2e;
+    transform: scale(1.1);
+}
+
+/* Dark Mode Toggle Button Styling */
+.dark-mode-toggle-button {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    background: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode-toggle-button:hover {
+    background: #555555;
+    transform: scale(1.1);
+}
+
+/* Responsive Alignment for Toggle Buttons */
+@media (max-width: 600px) {
+
+    .dark-mode-toggle-button,
+    .theme-toggle-button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .dark-mode-toggle-button {
+        bottom: 90px;
+    }
+
+    .theme-toggle-button {
+        bottom: 20px;
+    }
+}
+
+/* Optional: Ensure icons are properly sized within buttons */
+.theme-toggle-button i,
+.dark-mode-toggle-button i {
+    pointer-events: none;
+    /* Prevent icons from blocking button clicks */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode .header {
+    background: #1f1f1f;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .main-nav a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .main-nav a::after {
+    background-color: #bb86fc;
+}
+
+body.dark-mode .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .hero-left h1,
+body.dark-mode .hero-right h2 {
+    color: #ffffff;
+    text-shadow: none;
+}
+
+body.dark-mode .vacancies-day,
+body.dark-mode .vacancies-categories {
+    background: #2c2c2c;
+    /* Dark background */
+}
+
+body.dark-mode .vacancies-day h3,
+body.dark-mode .vacancies-categories h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .vacancies-day h3::before,
+body.dark-mode .vacancies-categories h3::before {
+    background: #bb86fc;
+}
+
+body.dark-mode .vacancies-list li,
+body.dark-mode .categories-list li {
+    background: #333333;
+}
+
+body.dark-mode .vacancies-list li:hover,
+body.dark-mode .categories-list li:hover {
+    background: #444444;
+}
+
+body.dark-mode .vacancy-title,
+body.dark-mode .categories-list a {
+    color: #ffffff;
+}
+
+body.dark-mode .vacancy-info {
+    color: #b0b0b0;
+}
+
+body.dark-mode .categories-list a:hover {
+    color: #bb86fc;
+}
+
+body.dark-mode .more-link {
+    color: #bb86fc;
+}
+
+body.dark-mode .more-link:hover {
+    color: #ff6f61;
+}
+
+body.dark-mode .footer {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-col h4::after {
+    background: #bb86fc;
+}
+
+body.dark-mode .footer-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .footer-contacts a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-social .social-icons a img {
+    filter: brightness(0) invert(1);
+    /* Invert social icons for visibility */
+}
+
+body.dark-mode .newsletter-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode .newsletter-form input {
+    border-color: #bb86fc;
+    color: #e0e0e0;
+}
+
+body.dark-mode .newsletter-form input::placeholder {
+    color: #a0a0a0;
+}
+
+body.dark-mode .newsletter-form button {
+    background: #bb86fc;
+}
+
+body.dark-mode .newsletter-form button:hover {
+    background: #ff6f61;
+}
+
+body.dark-mode .footer-bottom {
+    background: #141414;
+}
+
+body.dark-mode .footer-bottom p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-bottom a {
+    color: #bb86fc;
+}
+
+body.dark-mode .footer-bottom a:hover {
+    color: #ff6f61;
+}
+
+body.dark-mode .developed a {
+    color: #bb86fc;
+}
+
+body.dark-mode .developed a:hover {
+    color: #ff6f61;
+}
+
+/* Dark Mode: Listings Section Background */
+body.dark-mode .listings-section {
+    background-color: #121212;
+    /* Dark background for listings section */
+}
