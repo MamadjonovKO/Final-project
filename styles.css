@@ -1,4 +1,4 @@
-body { 
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
@@ -75,8 +75,11 @@ a {
 
 .overlay {
     position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -153,13 +156,15 @@ a {
     padding: 0 20px;
 }
 
-.vacancies-day, .vacancies-categories {
+.vacancies-day,
+.vacancies-categories {
     background: #fff;
     border-radius: 5px;
     padding: 20px;
 }
 
-.vacancies-day h3, .vacancies-categories h3 {
+.vacancies-day h3,
+.vacancies-categories h3 {
     margin-top: 0;
     font-size: 20px;
     margin-bottom: 20px;
@@ -218,7 +223,10 @@ a {
     color: #0073e6;
 }
 
-/* Footer Styles */
+.more-link:hover {
+    color: #0073e6;
+}
+
 .footer {
     background: #222;
     color: #fff;
@@ -399,7 +407,7 @@ a {
         top: 60px;
         left: 0;
         right: 0;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0, 0, 0, 0.8);
         padding: 20px;
         border-radius: 5px;
         flex-direction: column;
@@ -495,7 +503,6 @@ a {
     transform: scale(1.1);
 }
 
-/* Dark Mode Toggle Button Styling */
 .dark-mode-toggle-button {
     position: fixed;
     bottom: 100px;
@@ -521,7 +528,6 @@ a {
     transform: scale(1.1);
 }
 
-/* Responsive Alignment for Toggle Buttons */
 @media (max-width: 600px) {
 
     .dark-mode-toggle-button,
@@ -540,9 +546,7 @@ a {
     }
 }
 
-/* Optional: Ensure icons are properly sized within buttons */
 .theme-toggle-button i,
 .dark-mode-toggle-button i {
     pointer-events: none;
-    /* Prevent icons from blocking button clicks */
 }

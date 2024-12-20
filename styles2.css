@@ -1,9 +1,5 @@
-/* styles2.css */
-
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;700&display=swap');
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +30,6 @@ a:hover {
     margin: 0 auto;
 }
 
-/* Header Styles */
 .header {
     background: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -57,7 +52,6 @@ a:hover {
     width: auto;
 }
 
-/* Navigation Styles */
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -87,7 +81,6 @@ a:hover {
     width: 100%;
 }
 
-/* Burger Menu Styles */
 .burger-menu {
     background: none;
     border: none;
@@ -122,7 +115,6 @@ a:hover {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Mobile Navigation Styles */
 @media (max-width: 768px) {
     .main-nav ul {
         display: none;
@@ -160,7 +152,6 @@ a:hover {
     }
 }
 
-/* Hero Section Styles */
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -173,7 +164,6 @@ a:hover {
     background-position: center;
     color: #ffffff;
     padding-top: 80px;
-    /* Offset for fixed header */
     transition: background-image 0.3s ease;
 }
 
@@ -271,7 +261,6 @@ a:hover {
     transform: translateY(-5px);
 }
 
-/* Listings Section Styles */
 .listings-section {
     padding: 80px 0;
     background-color: #ffffff;
@@ -359,7 +348,6 @@ a:hover {
     color: #ff3b2e;
 }
 
-/* Footer Styles */
 .footer {
     background: #1a1a1a;
     color: #bdc3c7;
@@ -480,6 +468,11 @@ a:hover {
     cursor: pointer;
     font-size: 18px;
     transition: background 0.3s ease, transform 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .newsletter-form button:hover {
@@ -527,7 +520,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Toggle Button Styles */
 .theme-toggle-button {
     position: fixed;
     bottom: 25px;
@@ -553,7 +545,6 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* Dark Mode Toggle Button Styling */
 .dark-mode-toggle-button {
     position: fixed;
     bottom: 100px;
@@ -579,7 +570,6 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* Responsive Alignment for Toggle Buttons */
 @media (max-width: 600px) {
 
     .dark-mode-toggle-button,
@@ -598,14 +588,11 @@ a:hover {
     }
 }
 
-/* Optional: Ensure icons are properly sized within buttons */
 .theme-toggle-button i,
 .dark-mode-toggle-button i {
     pointer-events: none;
-    /* Prevent icons from blocking button clicks */
 }
 
-/* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -641,7 +628,6 @@ body.dark-mode .hero-right h2 {
 body.dark-mode .vacancies-day,
 body.dark-mode .vacancies-categories {
     background: #2c2c2c;
-    /* Dark background */
 }
 
 body.dark-mode .vacancies-day h3,
@@ -708,7 +694,6 @@ body.dark-mode .footer-contacts a {
 
 body.dark-mode .footer-social .social-icons a img {
     filter: brightness(0) invert(1);
-    /* Invert social icons for visibility */
 }
 
 body.dark-mode .newsletter-text {
@@ -756,8 +741,6 @@ body.dark-mode .developed a:hover {
     color: #ff6f61;
 }
 
-/* Dark Mode: Listings Section Background */
 body.dark-mode .listings-section {
     background-color: #121212;
-    /* Dark background for listings section */
 }
